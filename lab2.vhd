@@ -41,12 +41,16 @@ port map (
 );
 
 segdecod0 : entity work.segdecod(RTL)
-	port map(Entree => digit0value, Sortie => digit0);
+	port map(Entree => digit0value, Sortie => digit0(6 downto 0));
 	
 segdecod1 : entity work.segdecod(RTL)
-	port map(Entree => digit1value, Sortie => digit1);
+	port map(Entree => digit1value, Sortie => digit1(6 downto 0));
 	
 segdecod2 : entity work.segdecod(RTL)
-	port map(Entree => digit2value, Sortie => digit2);
+	port map(Entree => digit2value, Sortie => digit2(6 downto 0));
+	
+digit0(7) <= '1';
+digit1(7) <= '1';
+digit2(7) <= '1';
 
 END archi;
